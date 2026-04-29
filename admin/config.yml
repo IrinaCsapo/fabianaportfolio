@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: images
+public_folder: images
+
+site_url: https://mellow-gumption-b16acb.netlify.app
+
+collections:
+  - name: settings
+    label: "Site Settings"
+    files:
+      - name: general
+        label: "General Settings"
+        file: content.json
+        format: json
+        fields:
+          - {label: "Hero Statement", name: heroStatement, widget: text}
+          - {label: "About Title", name: aboutTitle, widget: string}
+          - {label: "About Body", name: aboutBody, widget: markdown}
+          - {label: "Contact Email", name: email, widget: string}
+          - {label: "Instagram URL", name: instagram, widget: string, required: false}
+          - {label: "Behance URL", name: behance, widget: string, required: false}
