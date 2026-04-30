@@ -1002,6 +1002,20 @@
       .catch(() => { /* silently keep hardcoded fallback content */ });
 
     // ── Netlify Identity redirect (required for CMS login) ──
+    // If the URL contains an identity token (recovery, invite, confirmation),
+    // forward it to /admin/ so Decap CMS can handle the login flow.
+    (function () {
+      const hash = window.location.hash;
+      if (hash && (
+        hash.includes('recovery_token') ||
+        hash.includes('invite_token') ||
+        hash.includes('confirmation_token') ||
+        hash.includes('access_token')
+      )) {
+        window.location.replace('/admin/' + hash);
+      }
+    })();
+
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on('init', user => {
         if (!user) {
