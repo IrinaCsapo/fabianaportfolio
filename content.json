@@ -1,8 +1,19 @@
 {
+  "heroImage": "",
+  "heroSlideshow": false,
+  "heroSlides": [],
+  "aboutPhoto": "images/about-photo.webp",
+  "headerLogo": "",
+  "footerLogo": "",
   "heroStatement": "Fabiana Fiesmann is a digital illustrator creating dreamy worlds where botanicals bloom into surreal, softly glowing universes.",
   "aboutTitle": "The mind behind the bloom",
   "aboutBody": "**Fabiana Fiesmann** is a digital illustrator and visual artist whose work lives at the intersection of the dreamy and the botanical — where soft gradients bloom into surreal landscapes and familiar forms dissolve into something entirely her own.\n\nDrawing inspiration from the tender strangeness of the natural world, her practice weaves together lush floral motifs, glowing gradients, and playful characters into compositions that feel at once intimate and otherworldly. **Every piece is an invitation to pause and wander.**\n\nShe has worked with editorial clients, brands, and independent projects — always with the same intention: to make something that feels alive.",
+  "contactHeading": "Let's make something beautiful together",
+  "contactSubtext": "Available for commissions, collaborations, and editorial projects.",
   "email": "hello@fabianafiesmann.com",
+  "footerCopyright": "© 2026 Fabiana Fiesmann. All rights reserved.",
   "instagram": "",
-  "behance": ""
+  "behance": "",
+  "linkedin": "",
+  "tiktok": ""
 }

@@ -2,23 +2,159 @@ backend:
   name: git-gateway
   branch: main
 
+# Where uploaded images get stored in the repo
 media_folder: images
 public_folder: images
 
-site_url: https://mellow-gumption-b16acb.netlify.app
+# The URL of the live site
+site_url: https://fabianafiesmann.com
 
 collections:
+
+  # ─── SITE SETTINGS ─────────────────────────────────────────────
   - name: settings
     label: "Site Settings"
     files:
+
       - name: general
         label: "General Settings"
         file: content.json
         format: json
         fields:
-          - {label: "Hero Statement", name: heroStatement, widget: text}
-          - {label: "About Title", name: aboutTitle, widget: string}
-          - {label: "About Body", name: aboutBody, widget: markdown}
-          - {label: "Contact Email", name: email, widget: string}
-          - {label: "Instagram URL", name: instagram, widget: string, required: false}
-          - {label: "Behance URL", name: behance, widget: string, required: false}
+
+          # ── IMAGES ──────────────────────────────────────────────
+
+          - label: "Hero Background Image"
+            name: heroImage
+            widget: image
+            required: false
+            hint: "Main full-screen background image on the homepage. Ideal size: 1920×1080px or larger."
+
+          - label: "Enable Rotating Hero Backgrounds"
+            name: heroSlideshow
+            widget: boolean
+            default: false
+            hint: "Turn ON to cycle through multiple hero images instead of showing just one."
+
+          - label: "Hero Slide Images"
+            name: heroSlides
+            widget: list
+            required: false
+            hint: "Add images here for the rotating hero slideshow (only used when 'Enable Rotating Hero Backgrounds' is ON)."
+            field:
+              label: "Slide Image"
+              name: image
+              widget: image
+
+          - label: "About Photo"
+            name: aboutPhoto
+            widget: image
+            required: false
+            hint: "Photo of Fabiana shown in the About section. Square or portrait works best."
+
+          - label: "Header Logo Image"
+            name: headerLogo
+            widget: image
+            required: false
+            hint: "Upload a logo to replace the handwritten 'fabiana' text in the header. Leave empty to keep the text logo."
+
+          - label: "Footer Logo Image"
+            name: footerLogo
+            widget: image
+            required: false
+            hint: "Upload a logo to replace the handwritten 'fabiana' text in the footer. Leave empty to keep the text logo."
+
+          # ── TEXT & LINKS ─────────────────────────────────────────
+
+          - label: "Hero Statement"
+            name: heroStatement
+            widget: text
+            hint: "The big bold text shown over the hero image on the homepage."
+
+          - label: "About — Title"
+            name: aboutTitle
+            widget: string
+            hint: "e.g. The mind behind the bloom"
+
+          - label: "About — Body"
+            name: aboutBody
+            widget: markdown
+            hint: "Fabiana's bio in the About section. Supports bold, italic, and paragraph breaks."
+
+          - label: "Contact Section Heading"
+            name: contactHeading
+            widget: string
+            required: false
+            hint: "e.g. Let's make something beautiful together"
+
+          - label: "Contact Section Subtext"
+            name: contactSubtext
+            widget: text
+            required: false
+            hint: "Short line shown below the contact heading, e.g. 'Available for commissions and collaborations.'"
+
+          - label: "Contact Email"
+            name: email
+            widget: string
+            hint: "The email address shown in the Contact section."
+
+          - label: "Footer Copyright Text"
+            name: footerCopyright
+            widget: string
+            required: false
+            hint: "e.g. © 2025 Fabiana Fiesmann. All rights reserved."
+
+          - label: "Instagram URL"
+            name: instagram
+            widget: string
+            required: false
+            hint: "Full URL e.g. https://instagram.com/fabiana"
+
+          - label: "Behance URL"
+            name: behance
+            widget: string
+            required: false
+            hint: "Full URL e.g. https://behance.net/fabiana"
+
+          - label: "LinkedIn URL"
+            name: linkedin
+            widget: string
+            required: false
+            hint: "Full URL e.g. https://linkedin.com/in/fabiana"
+
+          - label: "TikTok URL"
+            name: tiktok
+            widget: string
+            required: false
+            hint: "Full URL e.g. https://tiktok.com/@fabiana"
+
+  # ─── PORTFOLIO IMAGES ──────────────────────────────────────────
+  - name: portfolio
+    label: "Portfolio"
+    folder: portfolio-items
+    create: true
+    slug: "{{slug}}"
+    label_singular: "Portfolio Item"
+    fields:
+      - label: "Title"
+        name: title
+        widget: string
+        hint: "A short title for this piece"
+
+      - label: "Category"
+        name: category
+        widget: select
+        options:
+          - { label: "Floral",     value: floral }
+          - { label: "Surreal",    value: surreal }
+          - { label: "Characters", value: characters }
+          - { label: "Poster",     value: poster }
+          - { label: "Gradients",  value: gradient }
+          - { label: "Patterns",   value: pattern }
+          - { label: "Food",       value: food }
+          - { label: "Other",      value: other }
+
+      - label: "Image"
+        name: image
+        widget: image
+        hint: "Upload the illustration for this portfolio piece"
