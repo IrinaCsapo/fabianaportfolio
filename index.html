@@ -135,7 +135,7 @@
     /* Background illustration — swap src for your image */
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('images/surreal-1.jpg');
+      background-image: url('images/surreal-1.webp');
       background-size: cover;
       background-position: center 30%;
       background-repeat: no-repeat;
@@ -622,8 +622,11 @@
        ========================================== -->
   <nav id="main-nav">
 
-    <!-- Left: handwritten logo -->
-    <a href="#home" class="nav-logo">fabiana</a>
+    <!-- Left: logo (image if set, otherwise handwritten text) -->
+    <a href="#home" class="nav-logo" id="nav-logo">
+      <img id="header-logo-img" src="" alt="Fabiana Fiesmann" style="display:none;max-height:44px;width:auto;"/>
+      <span id="header-logo-text">fabiana</span>
+    </a>
 
     <!-- Centre: nav links -->
     <ul class="nav-links">
@@ -636,7 +639,7 @@
     <!-- Right: social icons -->
     <div class="nav-social">
       <!-- Instagram -->
-      <a href="#" target="_blank" rel="noopener" aria-label="Instagram" id="nav-instagram">
+      <a href="#" target="_blank" rel="noopener" aria-label="Instagram" id="nav-instagram" style="display:none;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
           <circle cx="12" cy="12" r="4"/>
@@ -644,9 +647,22 @@
         </svg>
       </a>
       <!-- Behance -->
-      <a href="#" target="_blank" rel="noopener" aria-label="Behance">
+      <a href="#" target="_blank" rel="noopener" aria-label="Behance" id="nav-behance" style="display:none;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M7.5 11.1c.8 0 1.4-.6 1.4-1.4S8.3 8.3 7.5 8.3H4.6v2.8h2.9zm.3 2.2H4.6V16h3.3c.9 0 1.6-.7 1.6-1.6 0-.9-.8-1.1-1.7-1.1zM3 6.5h4.8c1.8 0 3.3 1 3.3 2.9 0 1-.5 1.8-1.3 2.3 1.1.4 1.8 1.3 1.8 2.5 0 2.2-1.7 3.3-3.8 3.3H3V6.5zM15.4 8.7c-2.3 0-3.8 1.7-3.8 4s1.5 4 3.8 4c1.7 0 2.9-.9 3.5-2.3h-1.8c-.3.5-.9.8-1.6.8-1 0-1.8-.7-2-1.7h5.5c0-.2.1-.5.1-.8 0-2.3-1.5-4-3.7-4zm-1.9 3.2c.2-.9 1-1.6 1.9-1.6s1.6.7 1.8 1.6h-3.7zM13.8 6.5h4.4v1.1h-4.4z"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" id="nav-linkedin" style="display:none;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+      <!-- TikTok -->
+      <a href="#" target="_blank" rel="noopener" aria-label="TikTok" id="nav-tiktok" style="display:none;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
         </svg>
       </a>
     </div>
@@ -705,79 +721,79 @@
 
       <div class="portfolio-grid reveal reveal-delay-2">
         <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-1.jpg" alt="Pink hyacinth flowers" loading="lazy"/>
+          <img src="images/floral-1.webp" alt="Pink hyacinth flowers" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
         </div>
         <div class="portfolio-item" data-category="surreal" onclick="openLightbox(this)">
-          <img src="images/surreal-2.jpg" alt="Astral portal" loading="lazy"/>
+          <img src="images/surreal-2.webp" alt="Astral portal" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Surreal</span></div>
         </div>
         <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-4.jpg" alt="Floral bouquet black" loading="lazy"/>
+          <img src="images/floral-4.webp" alt="Floral bouquet black" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
         </div>
         <div class="portfolio-item" data-category="gradient" onclick="openLightbox(this)">
-          <img src="images/gradient-1.jpg" alt="Bubblegum gradient" loading="lazy"/>
+          <img src="images/gradient-1.webp" alt="Bubblegum gradient" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Gradients</span></div>
         </div>
         <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-2.jpg" alt="Pink flowers night" loading="lazy"/>
+          <img src="images/floral-2.webp" alt="Pink flowers night" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
         </div>
         <div class="portfolio-item" data-category="characters" onclick="openLightbox(this)">
-          <img src="images/characters-1.jpg" alt="Pink cat" loading="lazy"/>
+          <img src="images/characters-1.webp" alt="Pink cat" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Characters</span></div>
         </div>
         <div class="portfolio-item" data-category="surreal" onclick="openLightbox(this)">
-          <img src="images/surreal-1.jpg" alt="Hand in the clouds" loading="lazy"/>
+          <img src="images/surreal-1.webp" alt="Hand in the clouds" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Surreal</span></div>
         </div>
         <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-5.jpg" alt="Pastel bouquet" loading="lazy"/>
+          <img src="images/floral-5.webp" alt="Pastel bouquet" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
         </div>
         <div class="portfolio-item" data-category="poster" onclick="openLightbox(this)">
-          <img src="images/poster-1.jpg" alt="January pink poster" loading="lazy"/>
+          <img src="images/poster-1.webp" alt="January pink poster" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Poster</span></div>
         </div>
         <div class="portfolio-item" data-category="gradient" onclick="openLightbox(this)">
-          <img src="images/gradient-2.jpg" alt="Peach pastel" loading="lazy"/>
+          <img src="images/gradient-2.webp" alt="Peach pastel" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Gradients</span></div>
         </div>
         <div class="portfolio-item" data-category="characters" onclick="openLightbox(this)">
-          <img src="images/characters-2.jpg" alt="Sassy girl" loading="lazy"/>
+          <img src="images/characters-2.webp" alt="Sassy girl" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Characters</span></div>
         </div>
         <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-6.jpg" alt="Jungle" loading="lazy"/>
+          <img src="images/floral-6.webp" alt="Jungle" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
         </div>
         <div class="portfolio-item" data-category="gradient" onclick="openLightbox(this)">
-          <img src="images/gradient-3.jpg" alt="Pink pearl sphere" loading="lazy"/>
+          <img src="images/gradient-3.webp" alt="Pink pearl sphere" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Gradients</span></div>
         </div>
         <div class="portfolio-item" data-category="poster" onclick="openLightbox(this)">
-          <img src="images/poster-2.jpg" alt="Grid shapes" loading="lazy"/>
+          <img src="images/poster-2.webp" alt="Grid shapes" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Poster</span></div>
         </div>
         <div class="portfolio-item" data-category="surreal" onclick="openLightbox(this)">
-          <img src="images/surreal-3.jpg" alt="Cosmic" loading="lazy"/>
+          <img src="images/surreal-3.webp" alt="Cosmic" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Surreal</span></div>
         </div>
         <div class="portfolio-item" data-category="food" onclick="openLightbox(this)">
-          <img src="images/food-1.jpg" alt="Eggplant" loading="lazy"/>
+          <img src="images/food-1.webp" alt="Eggplant" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Food</span></div>
         </div>
         <div class="portfolio-item" data-category="pattern" onclick="openLightbox(this)">
-          <img src="images/pattern-1.jpg" alt="Pink yellow pattern" loading="lazy"/>
+          <img src="images/pattern-1.webp" alt="Pink yellow pattern" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Patterns</span></div>
         </div>
         <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-3.jpg" alt="Floral" loading="lazy"/>
+          <img src="images/floral-3.webp" alt="Floral" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
         </div>
         <div class="portfolio-item" data-category="other" onclick="openLightbox(this)">
-          <img src="images/other-1.jpg" alt="Tiny houses" loading="lazy"/>
+          <img src="images/other-1.webp" alt="Tiny houses" loading="lazy"/>
           <div class="portfolio-item-overlay"><span class="portfolio-item-label">Other</span></div>
         </div>
       </div>
@@ -791,8 +807,9 @@
     <div class="about-container">
 
       <div class="about-image-wrap reveal">
-        <!-- Replace with a real photo of Fabiana -->
-        <div class="about-photo-placeholder">
+        <!-- About photo — shown when set via CMS, placeholder shown otherwise -->
+        <img id="about-photo" src="" alt="Fabiana Fiesmann" style="display:none;width:100%;border-radius:16px;object-fit:cover;"/>
+        <div class="about-photo-placeholder" id="about-photo-placeholder">
           <svg width="52" height="52" viewBox="0 0 56 56" fill="none">
             <circle cx="28" cy="20" r="10" stroke="#c96b7a" stroke-width="1.5"/>
             <path d="M8 48c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="#c96b7a" stroke-width="1.5" stroke-linecap="round"/>
@@ -845,8 +862,8 @@
     <div class="contact-container">
       <div class="reveal">
         <p class="section-label">Get in touch</p>
-        <h2 class="section-title">Let's make something<br/><em>beautiful together</em></h2>
-        <p class="contact-subtitle">Or reach me directly at:</p>
+        <h2 class="section-title" id="contact-heading">Let's make something<br/><em>beautiful together</em></h2>
+        <p class="contact-subtitle" id="contact-subtext">Or reach me directly at:</p>
         <a href="mailto:hello@fabianafiesmann.com" class="contact-email-link" id="contact-email">
           hello@fabianafiesmann.com
         </a>
@@ -890,13 +907,17 @@
        FOOTER
        ========================================== -->
   <footer>
-    <div class="footer-logo">fabiana</div>
-    <div class="footer-social">
-      <a href="#" target="_blank" rel="noopener">Instagram</a>
-      <a href="#" target="_blank" rel="noopener">Behance</a>
-      <a href="#" target="_blank" rel="noopener">Are.na</a>
+    <div class="footer-logo" id="footer-logo">
+      <img id="footer-logo-img" src="" alt="Fabiana Fiesmann" style="display:none;max-height:48px;width:auto;"/>
+      <span id="footer-logo-text">fabiana</span>
     </div>
-    <p>&copy; 2026 Fabiana Fiesmann. All rights reserved.</p>
+    <div class="footer-social" id="footer-social">
+      <a href="#" target="_blank" rel="noopener" id="footer-instagram" style="display:none;">Instagram</a>
+      <a href="#" target="_blank" rel="noopener" id="footer-behance" style="display:none;">Behance</a>
+      <a href="#" target="_blank" rel="noopener" id="footer-linkedin" style="display:none;">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener" id="footer-tiktok" style="display:none;">TikTok</a>
+    </div>
+    <p id="footer-copyright">&copy; 2026 Fabiana Fiesmann. All rights reserved.</p>
   </footer>
 
   <!-- Lightbox -->
@@ -957,21 +978,55 @@
     fetch('content.json')
       .then(r => r.json())
       .then(data => {
-        // Hero statement
+
+        // ── HERO BACKGROUND ──────────────────────────────────────
+        const heroBg = document.querySelector('.hero-bg');
+        if (data.heroSlideshow && data.heroSlides && data.heroSlides.length > 1) {
+          // Rotating slideshow
+          let current = 0;
+          const slides = data.heroSlides;
+          heroBg.style.backgroundImage = `url('${slides[0]}')`;
+          heroBg.style.transition = 'background-image 1.2s ease-in-out';
+          setInterval(() => {
+            current = (current + 1) % slides.length;
+            heroBg.style.backgroundImage = `url('${slides[current]}')`;
+          }, 5000);
+        } else if (data.heroImage) {
+          heroBg.style.backgroundImage = `url('${data.heroImage}')`;
+        }
+
+        // ── HEADER LOGO ──────────────────────────────────────────
+        if (data.headerLogo) {
+          document.getElementById('header-logo-img').src = data.headerLogo;
+          document.getElementById('header-logo-img').style.display = 'block';
+          document.getElementById('header-logo-text').style.display = 'none';
+        }
+
+        // ── FOOTER LOGO ──────────────────────────────────────────
+        if (data.footerLogo) {
+          document.getElementById('footer-logo-img').src = data.footerLogo;
+          document.getElementById('footer-logo-img').style.display = 'block';
+          document.getElementById('footer-logo-text').style.display = 'none';
+        }
+
+        // ── ABOUT PHOTO ──────────────────────────────────────────
+        if (data.aboutPhoto) {
+          document.getElementById('about-photo').src = data.aboutPhoto;
+          document.getElementById('about-photo').style.display = 'block';
+          document.getElementById('about-photo-placeholder').style.display = 'none';
+        }
+
+        // ── HERO STATEMENT ───────────────────────────────────────
         if (data.heroStatement) {
           document.getElementById('hero-statement').textContent = data.heroStatement;
         }
-        // About title (keep the italic <em> wrapper)
+
+        // ── ABOUT TITLE ──────────────────────────────────────────
         if (data.aboutTitle) {
-          const parts = data.aboutTitle.split('the bloom');
-          if (parts.length === 2) {
-            document.getElementById('about-title').innerHTML =
-              parts[0] + '<em>the bloom</em>' + parts[1];
-          } else {
-            document.getElementById('about-title').textContent = data.aboutTitle;
-          }
+          document.getElementById('about-title').textContent = data.aboutTitle;
         }
-        // About body — convert simple markdown bold (**text**) to <strong>
+
+        // ── ABOUT BODY ───────────────────────────────────────────
         if (data.aboutBody) {
           const html = data.aboutBody
             .split('\n\n')
@@ -981,23 +1036,41 @@
             .join('');
           document.getElementById('about-body').innerHTML = html;
         }
-        // Email
+
+        // ── CONTACT HEADING & SUBTEXT ────────────────────────────
+        if (data.contactHeading) {
+          document.getElementById('contact-heading').textContent = data.contactHeading;
+        }
+        if (data.contactSubtext) {
+          document.getElementById('contact-subtext').textContent = data.contactSubtext;
+        }
+
+        // ── EMAIL ────────────────────────────────────────────────
         if (data.email) {
           const emailEl = document.getElementById('contact-email');
           emailEl.href = 'mailto:' + data.email;
           emailEl.textContent = data.email;
         }
-        // Social links
-        if (data.instagram) {
-          const ig = document.getElementById('nav-instagram');
-          if (ig) ig.href = data.instagram;
-          document.querySelectorAll('a[aria-label="Instagram"]')
-            .forEach(el => { if (data.instagram) el.href = data.instagram; });
+
+        // ── FOOTER COPYRIGHT ─────────────────────────────────────
+        if (data.footerCopyright) {
+          document.getElementById('footer-copyright').textContent = data.footerCopyright;
         }
-        if (data.behance) {
-          document.querySelectorAll('a[aria-label="Behance"]')
-            .forEach(el => { if (data.behance) el.href = data.behance; });
+
+        // ── SOCIAL LINKS (nav + footer) ──────────────────────────
+        function setSocial(id, footerId, url, label) {
+          if (url) {
+            const navEl = document.getElementById(id);
+            const footEl = document.getElementById(footerId);
+            if (navEl)  { navEl.href  = url; navEl.style.display  = 'inline-flex'; }
+            if (footEl) { footEl.href = url; footEl.style.display = 'inline-block'; }
+          }
         }
+        setSocial('nav-instagram', 'footer-instagram', data.instagram);
+        setSocial('nav-behance',   'footer-behance',   data.behance);
+        setSocial('nav-linkedin',  'footer-linkedin',  data.linkedin);
+        setSocial('nav-tiktok',    'footer-tiktok',    data.tiktok);
+
       })
       .catch(() => { /* silently keep hardcoded fallback content */ });
 
