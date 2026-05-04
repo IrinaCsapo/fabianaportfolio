@@ -1087,6 +1087,11 @@
           if (data.footerTextColor) {
             footer.style.color = data.footerTextColor;
           }
+          if (data.footerLinkColor) {
+            footer.querySelectorAll('.footer-social a').forEach(a => {
+              a.style.color = data.footerLinkColor;
+            });
+          }
         }
 
         // ── SOCIAL LINKS (nav + footer) ──────────────────────────

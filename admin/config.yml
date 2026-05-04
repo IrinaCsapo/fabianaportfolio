@@ -183,6 +183,12 @@ collections:
             default: "#ffffff"
             hint: "Colour for all text and links inside the footer."
 
+          - label: "Footer Social Link Colour"
+            name: footerLinkColor
+            widget: color
+            required: false
+            hint: "Colour for the social links (Instagram, Behance, etc.) in the footer. Leave empty to inherit the text colour above."
+
   # ─── PORTFOLIO IMAGES ──────────────────────────────────────────
   - name: portfolio
     label: "Portfolio"
