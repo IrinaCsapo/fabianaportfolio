@@ -522,8 +522,21 @@
       color: rgba(255,255,255,0.35);
       transition: color 0.2s;
     }
-    .footer-social a:hover { color: var(--rose); }
+    .footer-social a:hover { opacity: 0.7; }
     footer p { font-size: 0.73rem; letter-spacing: 0.04em; }
+    .footer-credit {
+      margin-top: 20px;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      opacity: 0.45;
+    }
+    .footer-credit a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      color: inherit;
+      transition: opacity 0.2s;
+    }
+    .footer-credit a:hover { opacity: 0.9; }
 
     /* =====================
        SCROLL REVEAL
@@ -906,7 +919,7 @@
   <!-- ==========================================
        FOOTER
        ========================================== -->
-  <footer>
+  <footer id="site-footer">
     <div class="footer-logo" id="footer-logo">
       <img id="footer-logo-img" src="" alt="Fabiana Fiesmann" style="display:none;max-height:48px;width:auto;"/>
       <span id="footer-logo-text">fabiana</span>
@@ -918,6 +931,7 @@
       <a href="#" target="_blank" rel="noopener" id="footer-tiktok" style="display:none;">TikTok</a>
     </div>
     <p id="footer-copyright">&copy; 2026 Fabiana Fiesmann. All rights reserved.</p>
+    <p class="footer-credit">Made with love by <a href="https://irina.love/" target="_blank" rel="noopener">irina.love</a></p>
   </footer>
 
   <!-- Lightbox -->
@@ -1055,6 +1069,24 @@
         // ── FOOTER COPYRIGHT ─────────────────────────────────────
         if (data.footerCopyright) {
           document.getElementById('footer-copyright').textContent = data.footerCopyright;
+        }
+
+        // ── FOOTER BACKGROUND & TEXT COLOUR ──────────────────────
+        const footer = document.getElementById('site-footer');
+        if (footer) {
+          if (data.footerBgImage) {
+            footer.style.backgroundImage = `url('${data.footerBgImage}')`;
+            footer.style.backgroundSize  = 'cover';
+            footer.style.backgroundPosition = 'center';
+          } else if (data.footerUseGradient && data.footerGradientStart && data.footerGradientEnd) {
+            const dir = data.footerGradientDirection || '135deg';
+            footer.style.background = `linear-gradient(${dir}, ${data.footerGradientStart}, ${data.footerGradientEnd})`;
+          } else if (data.footerBgColor) {
+            footer.style.background = data.footerBgColor;
+          }
+          if (data.footerTextColor) {
+            footer.style.color = data.footerTextColor;
+          }
         }
 
         // ── SOCIAL LINKS (nav + footer) ──────────────────────────

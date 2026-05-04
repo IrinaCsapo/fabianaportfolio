@@ -128,6 +128,61 @@ collections:
             required: false
             hint: "Full URL e.g. https://tiktok.com/@fabiana"
 
+          # ── FOOTER DESIGN ────────────────────────────────────────
+
+          - label: "Footer Background Image"
+            name: footerBgImage
+            widget: image
+            required: false
+            hint: "Upload an image to use as the footer background. Leave empty to use a solid colour or gradient instead."
+
+          - label: "Footer Background Colour"
+            name: footerBgColor
+            widget: color
+            required: false
+            default: "#2a1a1f"
+            hint: "Solid background colour for the footer. Used when no image or gradient is set."
+
+          - label: "Enable Footer Gradient"
+            name: footerUseGradient
+            widget: boolean
+            default: false
+            hint: "Turn ON to use a gradient instead of a solid colour. Set the two colours below."
+
+          - label: "Gradient — Start Colour"
+            name: footerGradientStart
+            widget: color
+            required: false
+            default: "#c96b7a"
+            hint: "First colour of the footer gradient (only used when gradient is enabled)."
+
+          - label: "Gradient — End Colour"
+            name: footerGradientEnd
+            widget: color
+            required: false
+            default: "#2a1a1f"
+            hint: "Second colour of the footer gradient (only used when gradient is enabled)."
+
+          - label: "Gradient Direction"
+            name: footerGradientDirection
+            widget: select
+            required: false
+            default: "135deg"
+            hint: "Which direction the gradient flows."
+            options:
+              - { label: "Diagonal ↘",     value: "135deg" }
+              - { label: "Diagonal ↗",     value: "45deg" }
+              - { label: "Left → Right",   value: "to right" }
+              - { label: "Top → Bottom",   value: "to bottom" }
+              - { label: "Right → Left",   value: "to left" }
+
+          - label: "Footer Text Colour"
+            name: footerTextColor
+            widget: color
+            required: false
+            default: "#ffffff"
+            hint: "Colour for all text and links inside the footer."
+
   # ─── PORTFOLIO IMAGES ──────────────────────────────────────────
   - name: portfolio
     label: "Portfolio"
