@@ -19,7 +19,7 @@
   "tiktok": "",
   "footerBgImage": "images/header-gradient.jpg",
   "footerTextColor": "#000000",
-  "footerUseGradient": true,
+  "footerUseGradient": false,
   "heroSlides": [],
   "email": "fabianafiesmann@gmail.com",
   "linkedin": ""
