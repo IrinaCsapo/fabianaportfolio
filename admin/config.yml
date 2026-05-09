@@ -187,7 +187,8 @@ collections:
             name: footerLinkColor
             widget: color
             required: false
-            hint: "Colour for the social links (Instagram, Behance, etc.) in the footer. Leave empty to inherit the text colour above."
+            default: "#333333"
+            hint: "Colour for the social links (Instagram, Behance, etc.) in the footer. Defaults to dark grey — change if your background is dark."
 
   # ─── PORTFOLIO IMAGES ──────────────────────────────────────────
   - name: portfolio
