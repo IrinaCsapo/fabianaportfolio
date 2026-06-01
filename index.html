@@ -733,83 +733,7 @@
         <button class="filter-tab" data-filter="other">Other</button>
       </div>
 
-      <div class="portfolio-grid reveal reveal-delay-2">
-        <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-1.webp" alt="Pink hyacinth flowers" loading="eager"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
-        </div>
-        <div class="portfolio-item" data-category="surreal" onclick="openLightbox(this)">
-          <img src="images/surreal-2.webp" alt="Astral portal" loading="eager"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Surreal</span></div>
-        </div>
-        <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-4.webp" alt="Floral bouquet black" loading="eager"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
-        </div>
-        <div class="portfolio-item" data-category="gradient" onclick="openLightbox(this)">
-          <img src="images/gradient-1.webp" alt="Bubblegum gradient" loading="eager"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Gradients</span></div>
-        </div>
-        <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img src="images/floral-2.webp" alt="Pink flowers night" loading="eager"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
-        </div>
-        <div class="portfolio-item" data-category="characters" onclick="openLightbox(this)">
-          <img src="images/characters-1.webp" alt="Pink cat" loading="eager"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Characters</span></div>
-        </div>
-        <div class="portfolio-item" data-category="surreal" onclick="openLightbox(this)">
-          <img data-src="images/surreal-1.webp" alt="Hand in the clouds" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Surreal</span></div>
-        </div>
-        <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img data-src="images/floral-5.webp" alt="Pastel bouquet" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
-        </div>
-        <div class="portfolio-item" data-category="poster" onclick="openLightbox(this)">
-          <img data-src="images/poster-1.webp" alt="January pink poster" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Poster</span></div>
-        </div>
-        <div class="portfolio-item" data-category="gradient" onclick="openLightbox(this)">
-          <img data-src="images/gradient-2.webp" alt="Peach pastel" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Gradients</span></div>
-        </div>
-        <div class="portfolio-item" data-category="characters" onclick="openLightbox(this)">
-          <img data-src="images/characters-2.webp" alt="Sassy girl" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Characters</span></div>
-        </div>
-        <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img data-src="images/floral-6.webp" alt="Jungle" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
-        </div>
-        <div class="portfolio-item" data-category="gradient" onclick="openLightbox(this)">
-          <img data-src="images/gradient-3.webp" alt="Pink pearl sphere" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Gradients</span></div>
-        </div>
-        <div class="portfolio-item" data-category="poster" onclick="openLightbox(this)">
-          <img data-src="images/poster-2.webp" alt="Grid shapes" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Poster</span></div>
-        </div>
-        <div class="portfolio-item" data-category="surreal" onclick="openLightbox(this)">
-          <img data-src="images/surreal-3.webp" alt="Cosmic" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Surreal</span></div>
-        </div>
-        <div class="portfolio-item" data-category="food" onclick="openLightbox(this)">
-          <img data-src="images/food-1.webp" alt="Eggplant" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Food</span></div>
-        </div>
-        <div class="portfolio-item" data-category="pattern" onclick="openLightbox(this)">
-          <img data-src="images/pattern-1.webp" alt="Pink yellow pattern" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Patterns</span></div>
-        </div>
-        <div class="portfolio-item" data-category="floral" onclick="openLightbox(this)">
-          <img data-src="images/floral-3.webp" alt="Floral" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Floral</span></div>
-        </div>
-        <div class="portfolio-item" data-category="other" onclick="openLightbox(this)">
-          <img data-src="images/other-1.webp" alt="Tiny houses" class="lazy-img"/>
-          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Other</span></div>
-        </div>
+      <div class="portfolio-grid reveal reveal-delay-2" id="portfolio-grid">
       </div>
     </div>
   </section>
@@ -958,20 +882,63 @@
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
 
-    // Portfolio filter
-    const tabs  = document.querySelectorAll('.filter-tab');
-    const items = document.querySelectorAll('.portfolio-item');
+    // Portfolio filter (delegated — works with dynamically rendered items)
+    const tabs = document.querySelectorAll('.filter-tab');
+    let activeFilter = 'all';
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        const f = tab.dataset.filter;
-        items.forEach(item => {
-          const show = f === 'all' || item.dataset.category === f;
+        activeFilter = tab.dataset.filter;
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+          const show = activeFilter === 'all' || item.dataset.category === activeFilter;
           item.style.display = show ? 'block' : 'none';
         });
       });
     });
+
+    // ── Load portfolio from portfolio.json ──────────────────────
+    const categoryLabels = {
+      floral: 'Floral', surreal: 'Surreal', characters: 'Characters',
+      poster: 'Poster', gradient: 'Gradients', pattern: 'Patterns',
+      food: 'Food', other: 'Other'
+    };
+    fetch('portfolio.json')
+      .then(r => r.json())
+      .then(data => {
+        const grid = document.getElementById('portfolio-grid');
+        const portfolioItems = data.items || [];
+        portfolioItems.forEach((item, i) => {
+          const div = document.createElement('div');
+          div.className = 'portfolio-item';
+          div.dataset.category = item.category;
+          div.addEventListener('click', () => openLightbox(div));
+          const img = document.createElement('img');
+          img.alt = item.alt || item.title || '';
+          if (i < 6) {
+            img.src = item.image;
+            img.loading = 'eager';
+          } else {
+            img.dataset.src = item.image;
+            img.className = 'lazy-img';
+          }
+          const overlay = document.createElement('div');
+          overlay.className = 'portfolio-item-overlay';
+          overlay.innerHTML = `<span class="portfolio-item-label">${categoryLabels[item.category] || item.category}</span>`;
+          div.appendChild(img);
+          div.appendChild(overlay);
+          grid.appendChild(div);
+        });
+        // Apply active filter if one was set before load
+        if (activeFilter !== 'all') {
+          document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.style.display = item.dataset.category === activeFilter ? 'block' : 'none';
+          });
+        }
+        // Init lazy loading for dynamically rendered images
+        initLazyLoad();
+      })
+      .catch(() => console.warn('portfolio.json not found'));
 
     // Lightbox
     function openLightbox(el) {
@@ -1139,7 +1106,7 @@
     }
 
     // ── Reliable lazy loading via IntersectionObserver (fixes Safari CSS columns) ──
-    (function() {
+    function initLazyLoad() {
       const lazyImgs = document.querySelectorAll('img.lazy-img');
       if (!lazyImgs.length) return;
       const load = img => {
@@ -1160,7 +1127,7 @@
       } else {
         lazyImgs.forEach(load); // fallback: load all immediately
       }
-    })();
+    }
 
     // Contact form
     function handleSubmit(e) {

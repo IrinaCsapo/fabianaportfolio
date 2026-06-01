@@ -193,30 +193,43 @@ collections:
   # ─── PORTFOLIO IMAGES ──────────────────────────────────────────
   - name: portfolio
     label: "Portfolio"
-    folder: portfolio-items
-    create: true
-    slug: "{{slug}}"
-    label_singular: "Portfolio Item"
-    fields:
-      - label: "Title"
-        name: title
-        widget: string
-        hint: "A short title for this piece"
+    files:
+      - name: items
+        label: "Portfolio Items"
+        file: portfolio.json
+        format: json
+        fields:
+          - label: "Items"
+            name: items
+            widget: list
+            label_singular: "Portfolio Item"
+            hint: "Add, remove or reorder portfolio pieces. Drag to reorder."
+            fields:
+              - label: "Title"
+                name: title
+                widget: string
+                hint: "A short title for this piece"
 
-      - label: "Category"
-        name: category
-        widget: select
-        options:
-          - { label: "Floral",     value: floral }
-          - { label: "Surreal",    value: surreal }
-          - { label: "Characters", value: characters }
-          - { label: "Poster",     value: poster }
-          - { label: "Gradients",  value: gradient }
-          - { label: "Patterns",   value: pattern }
-          - { label: "Food",       value: food }
-          - { label: "Other",      value: other }
+              - label: "Category"
+                name: category
+                widget: select
+                options:
+                  - { label: "Floral",     value: floral }
+                  - { label: "Surreal",    value: surreal }
+                  - { label: "Characters", value: characters }
+                  - { label: "Poster",     value: poster }
+                  - { label: "Gradients",  value: gradient }
+                  - { label: "Patterns",   value: pattern }
+                  - { label: "Food",       value: food }
+                  - { label: "Other",      value: other }
 
-      - label: "Image"
-        name: image
-        widget: image
-        hint: "Upload the illustration for this portfolio piece"
+              - label: "Image"
+                name: image
+                widget: image
+                hint: "Upload the illustration for this portfolio piece"
+
+              - label: "Alt Text"
+                name: alt
+                widget: string
+                required: false
+                hint: "Brief description of the image (good for accessibility)"
