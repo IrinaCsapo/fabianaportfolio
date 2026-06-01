@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-32 -32 64 64">
-  <ellipse cx="14.080" cy="0.000" rx="17.920" ry="8.320" fill="#e8728a" transform="rotate(0,14.080,0.000)"/>
-  <ellipse cx="4.351" cy="13.391" rx="17.920" ry="8.320" fill="#e8728a" transform="rotate(72,4.351,13.391)"/>
-  <ellipse cx="-11.391" cy="8.276" rx="17.920" ry="8.320" fill="#e8728a" transform="rotate(144,-11.391,8.276)"/>
-  <ellipse cx="-11.391" cy="-8.276" rx="17.920" ry="8.320" fill="#e8728a" transform="rotate(216,-11.391,-8.276)"/>
-  <ellipse cx="4.351" cy="-13.391" rx="17.920" ry="8.320" fill="#e8728a" transform="rotate(288,4.351,-13.391)"/>
-  <circle r="4.480" fill="#e8728a"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <circle cx="16.00" cy="5.92" r="9.60" fill="#e8728a"/>
+  <circle cx="25.13" cy="12.54" r="9.60" fill="#e8728a"/>
+  <circle cx="21.74" cy="23.34" r="9.60" fill="#e8728a"/>
+  <circle cx="10.26" cy="23.34" r="9.60" fill="#e8728a"/>
+  <circle cx="6.87"  cy="12.54" r="9.60" fill="#e8728a"/>
+  <circle cx="16"    cy="16"    r="5.76" fill="#e8728a"/>
 </svg>
