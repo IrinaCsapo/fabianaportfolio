@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "title": "matcha",
+      "category": "food",
+      "image": "images/tiny.jpg"
+    },
+    {
       "title": "circle",
       "image": "images/tinyfffff.jpg",
       "category": "gradient"
