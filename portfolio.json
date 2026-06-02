@@ -131,6 +131,26 @@
       "category": "characters",
       "image": "images/characters-2.webp",
       "alt": "Sassy girl"
+    },
+    {
+      "title": "80s",
+      "category": "surreal",
+      "image": "images/yyyuuuuuu2-recovered.jpg"
+    },
+    {
+      "title": "yellow",
+      "category": "gradient",
+      "image": "images/aaaa2.jpg"
+    },
+    {
+      "title": "cupcake",
+      "category": "gradient",
+      "image": "images/noisyyy.jpg"
+    },
+    {
+      "title": "blue girl",
+      "category": "characters",
+      "image": "images/eyes-openbigsize.jpg"
     }
   ]
 }
