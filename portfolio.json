@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "title": "knife",
+      "category": "food",
+      "image": "images/knife.jpg"
+    },
+    {
+      "title": "dumplings",
+      "category": "food",
+      "image": "images/3.jpg"
+    },
+    {
+      "title": "chili",
+      "category": "food",
+      "image": "images/chili.jpg"
+    },
+    {
       "title": "matcha",
       "category": "food",
       "image": "images/tiny.jpg"
@@ -123,21 +138,6 @@
       "category": "other",
       "image": "images/other-1.webp",
       "alt": "Tiny houses"
-    },
-    {
-      "title": "chili",
-      "category": "food",
-      "image": "images/chili.jpg"
-    },
-    {
-      "title": "dumplings",
-      "category": "food",
-      "image": "images/3.jpg"
-    },
-    {
-      "title": "knife",
-      "category": "food",
-      "image": "images/knife.jpg"
     },
     {
       "title": "hotdog",
