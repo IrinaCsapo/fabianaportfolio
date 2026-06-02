@@ -133,6 +133,16 @@
       "title": "dumplings",
       "category": "food",
       "image": "images/3.jpg"
+    },
+    {
+      "title": "knife",
+      "category": "food",
+      "image": "images/knife.jpg"
+    },
+    {
+      "title": "hotdog",
+      "category": "food",
+      "image": "images/uu.jpg"
     }
   ]
 }
