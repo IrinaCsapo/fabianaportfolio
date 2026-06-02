@@ -151,6 +151,51 @@
       "title": "blue girl",
       "category": "characters",
       "image": "images/eyes-openbigsize.jpg"
+    },
+    {
+      "title": "girrrrl",
+      "category": "characters",
+      "image": "images/fin.jpg"
+    },
+    {
+      "title": "orange",
+      "category": "food",
+      "image": "images/c.jpg"
+    },
+    {
+      "title": "fortune cookie",
+      "category": "food",
+      "image": "images/fortune-cookie.jpg"
+    },
+    {
+      "title": "type",
+      "category": "other",
+      "image": "images/a-red.jpg"
+    },
+    {
+      "title": "bye",
+      "category": "surreal",
+      "image": "images/bye-poster.jpg"
+    },
+    {
+      "title": "bag",
+      "category": "gradient",
+      "image": "images/bag.jpg"
+    },
+    {
+      "title": "mirror red",
+      "category": "surreal",
+      "image": "images/mirror-red.jpg"
+    },
+    {
+      "title": "papercut",
+      "category": "other",
+      "image": "images/grainy-papercut.jpg"
+    },
+    {
+      "title": "peach",
+      "category": "gradient",
+      "image": "images/peach-light.jpg"
     }
   ]
 }
