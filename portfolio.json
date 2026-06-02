@@ -1,24 +1,124 @@
 {
   "items": [
-    { "title": "Pink Hyacinth", "category": "floral", "image": "images/floral-1.webp", "alt": "Pink hyacinth flowers" },
-    { "title": "Astral Portal", "category": "surreal", "image": "images/surreal-2.webp", "alt": "Astral portal" },
-    { "title": "Floral Bouquet", "category": "floral", "image": "images/floral-4.webp", "alt": "Floral bouquet black" },
-    { "title": "Bubblegum Gradient", "category": "gradient", "image": "images/gradient-1.webp", "alt": "Bubblegum gradient" },
-    { "title": "Pink Flowers Night", "category": "floral", "image": "images/floral-2.webp", "alt": "Pink flowers night" },
-    { "title": "Pink Cat", "category": "characters", "image": "images/characters-1.webp", "alt": "Pink cat" },
-    { "title": "Hand in the Clouds", "category": "surreal", "image": "images/surreal-1.webp", "alt": "Hand in the clouds" },
-    { "title": "Pastel Bouquet", "category": "floral", "image": "images/floral-5.webp", "alt": "Pastel bouquet" },
-    { "title": "January", "category": "poster", "image": "images/poster-1.webp", "alt": "January pink poster" },
-    { "title": "Peach Pastel", "category": "gradient", "image": "images/gradient-2.webp", "alt": "Peach pastel" },
-    { "title": "Sassy Girl", "category": "characters", "image": "images/characters-2.webp", "alt": "Sassy girl" },
-    { "title": "Jungle", "category": "floral", "image": "images/floral-6.webp", "alt": "Jungle" },
-    { "title": "Pink Pearl Sphere", "category": "gradient", "image": "images/gradient-3.webp", "alt": "Pink pearl sphere" },
-    { "title": "Grid Shapes", "category": "poster", "image": "images/poster-2.webp", "alt": "Grid shapes" },
-    { "title": "Cosmic", "category": "surreal", "image": "images/surreal-3.webp", "alt": "Cosmic" },
-    { "title": "Eggplant", "category": "food", "image": "images/food-1.webp", "alt": "Eggplant" },
-    { "title": "Pink Yellow Pattern", "category": "pattern", "image": "images/pattern-1.webp", "alt": "Pink yellow pattern" },
-    { "title": "Floral", "category": "floral", "image": "images/floral-3.webp", "alt": "Floral" },
-    { "title": "Tiny Houses", "category": "other", "image": "images/other-1.webp", "alt": "Tiny houses" },
-    { "title": "Sphere", "category": "gradient", "image": "images/tinyfffff.jpg", "alt": "Gradient sphere" }
+    {
+      "title": "Sphere",
+      "category": "gradient",
+      "image": "images/tinyfffff.jpg",
+      "alt": "Gradient sphere"
+    },
+    {
+      "title": "Pink Hyacinth",
+      "category": "floral",
+      "image": "images/floral-1.webp",
+      "alt": "Pink hyacinth flowers"
+    },
+    {
+      "title": "Astral Portal",
+      "category": "surreal",
+      "image": "images/surreal-2.webp",
+      "alt": "Astral portal"
+    },
+    {
+      "title": "Floral Bouquet",
+      "category": "floral",
+      "image": "images/floral-4.webp",
+      "alt": "Floral bouquet black"
+    },
+    {
+      "title": "Bubblegum Gradient",
+      "category": "gradient",
+      "image": "images/gradient-1.webp",
+      "alt": "Bubblegum gradient"
+    },
+    {
+      "title": "Pink Flowers Night",
+      "category": "floral",
+      "image": "images/floral-2.webp",
+      "alt": "Pink flowers night"
+    },
+    {
+      "title": "Pink Cat",
+      "category": "characters",
+      "image": "images/characters-1.webp",
+      "alt": "Pink cat"
+    },
+    {
+      "title": "Hand in the Clouds",
+      "category": "surreal",
+      "image": "images/surreal-1.webp",
+      "alt": "Hand in the clouds"
+    },
+    {
+      "title": "Pastel Bouquet",
+      "category": "floral",
+      "image": "images/floral-5.webp",
+      "alt": "Pastel bouquet"
+    },
+    {
+      "title": "January",
+      "category": "poster",
+      "image": "images/poster-1.webp",
+      "alt": "January pink poster"
+    },
+    {
+      "title": "Peach Pastel",
+      "category": "gradient",
+      "image": "images/gradient-2.webp",
+      "alt": "Peach pastel"
+    },
+    {
+      "title": "Sassy Girl",
+      "category": "characters",
+      "image": "images/characters-2.webp",
+      "alt": "Sassy girl"
+    },
+    {
+      "title": "Jungle",
+      "category": "floral",
+      "image": "images/floral-6.webp",
+      "alt": "Jungle"
+    },
+    {
+      "title": "Pink Pearl Sphere",
+      "category": "gradient",
+      "image": "images/gradient-3.webp",
+      "alt": "Pink pearl sphere"
+    },
+    {
+      "title": "Grid Shapes",
+      "category": "poster",
+      "image": "images/poster-2.webp",
+      "alt": "Grid shapes"
+    },
+    {
+      "title": "Cosmic",
+      "category": "surreal",
+      "image": "images/surreal-3.webp",
+      "alt": "Cosmic"
+    },
+    {
+      "title": "Eggplant",
+      "category": "food",
+      "image": "images/food-1.webp",
+      "alt": "Eggplant"
+    },
+    {
+      "title": "Pink Yellow Pattern",
+      "category": "pattern",
+      "image": "images/pattern-1.webp",
+      "alt": "Pink yellow pattern"
+    },
+    {
+      "title": "Floral",
+      "category": "floral",
+      "image": "images/floral-3.webp",
+      "alt": "Floral"
+    },
+    {
+      "title": "Tiny Houses",
+      "category": "other",
+      "image": "images/other-1.webp",
+      "alt": "Tiny houses"
+    }
   ]
 }
