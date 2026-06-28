@@ -11,11 +11,6 @@
       "image": "images/tiny.jpg"
     },
     {
-      "title": "dumplings",
-      "category": "food",
-      "image": "images/3.jpg"
-    },
-    {
       "title": "circle",
       "image": "images/tinyfffff.jpg",
       "category": "gradient"
@@ -27,20 +22,25 @@
       "alt": "Pastel bouquet"
     },
     {
+      "title": "Pink Hyacinth",
+      "category": "floral",
+      "image": "images/floral-1.webp",
+      "alt": "Pink hyacinth flowers"
+    },
+    {
       "title": "chili",
       "category": "food",
       "image": "images/chili.jpg"
     },
     {
+      "title": "dumplings",
+      "category": "food",
+      "image": "images/3.jpg"
+    },
+    {
       "title": "knife",
       "category": "food",
       "image": "images/knife.jpg"
-    },
-    {
-      "title": "Pink Hyacinth",
-      "category": "floral",
-      "image": "images/floral-1.webp",
-      "alt": "Pink hyacinth flowers"
     },
     {
       "title": "Astral Portal",
