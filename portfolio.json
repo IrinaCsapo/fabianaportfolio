@@ -1,19 +1,9 @@
 {
   "items": [
     {
-      "title": "knife",
-      "category": "food",
-      "image": "images/knife.jpg"
-    },
-    {
-      "title": "dumplings",
-      "category": "food",
-      "image": "images/3.jpg"
-    },
-    {
-      "title": "chili",
-      "category": "food",
-      "image": "images/chili.jpg"
+      "title": "speakers",
+      "category": "floral",
+      "image": "images/speakers-tiny.jpg"
     },
     {
       "title": "matcha",
@@ -21,9 +11,30 @@
       "image": "images/tiny.jpg"
     },
     {
+      "title": "dumplings",
+      "category": "food",
+      "image": "images/3.jpg"
+    },
+    {
       "title": "circle",
       "image": "images/tinyfffff.jpg",
       "category": "gradient"
+    },
+    {
+      "title": "Pastel Bouquet",
+      "category": "floral",
+      "image": "images/floral-5.webp",
+      "alt": "Pastel bouquet"
+    },
+    {
+      "title": "chili",
+      "category": "food",
+      "image": "images/chili.jpg"
+    },
+    {
+      "title": "knife",
+      "category": "food",
+      "image": "images/knife.jpg"
     },
     {
       "title": "Pink Hyacinth",
@@ -66,12 +77,6 @@
       "category": "surreal",
       "image": "images/surreal-1.webp",
       "alt": "Hand in the clouds"
-    },
-    {
-      "title": "Pastel Bouquet",
-      "category": "floral",
-      "image": "images/floral-5.webp",
-      "alt": "Pastel bouquet"
     },
     {
       "title": "Peach Pastel",
@@ -196,11 +201,6 @@
       "title": "peach",
       "category": "gradient",
       "image": "images/peach-light.jpg"
-    },
-    {
-      "title": "speakers",
-      "category": "floral",
-      "image": "images/speakers-tiny.jpg"
     }
   ]
 }
