@@ -196,6 +196,11 @@
       "title": "peach",
       "category": "gradient",
       "image": "images/peach-light.jpg"
+    },
+    {
+      "title": "speakers",
+      "category": "floral",
+      "image": "images/speakers-tiny.jpg"
     }
   ]
 }
