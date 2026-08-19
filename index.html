@@ -21,8 +21,8 @@
   <meta name="twitter:description" content="Digital illustration & photography — dreamy botanicals, surreal worlds, and softly glowing universes."/>
   <meta name="twitter:image"       content="https://fabianafiesmann.com/og-image.jpg"/>
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=2"/>
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
   <!-- Netlify Identity Widget — required for Decap CMS login redirect -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -319,11 +319,23 @@
       border-radius: 4px;
       cursor: pointer;
     }
-    .portfolio-item img {
+    .portfolio-item img,
+    .portfolio-item video {
       width: 100%; display: block;
       transition: transform 0.6s ease;
     }
-    .portfolio-item:hover img { transform: scale(1.04); }
+    .portfolio-item:hover img,
+    .portfolio-item:hover video { transform: scale(1.04); }
+    .portfolio-item-motion {
+      position: absolute; top: 10px; right: 10px;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(42,26,31,0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none; z-index: 2;
+    }
+    .portfolio-item-motion svg { width: 10px; height: 10px; display: block; }
     .portfolio-item-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(42,26,31,0.65) 0%, transparent 55%);
@@ -347,10 +359,14 @@
       padding: 40px;
     }
     .lightbox.open { display: flex; }
-    .lightbox img {
+    .lightbox img,
+    .lightbox video {
       max-height: 88vh; max-width: 88vw;
       object-fit: contain; border-radius: 4px;
     }
+    .lightbox video { display: none; }
+    .lightbox.is-video img { display: none; }
+    .lightbox.is-video video { display: block; }
     .lightbox-close {
       position: absolute; top: 20px; right: 28px;
       color: white; font-size: 2.2rem; cursor: pointer;
@@ -883,6 +899,7 @@
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <img src="" alt="" id="lightbox-img"/>
+    <video id="lightbox-video" autoplay muted loop playsinline></video>
   </div>
 
   <!-- ==========================================
@@ -929,23 +946,54 @@
         const grid = document.getElementById('portfolio-grid');
         const portfolioItems = data.items || [];
         portfolioItems.forEach((item, i) => {
+          if (!item.image && !item.video) return; // skip empty entries
           const div = document.createElement('div');
           div.className = 'portfolio-item';
           div.dataset.category = item.category;
           div.addEventListener('click', () => openLightbox(div));
-          const img = document.createElement('img');
-          img.alt = item.alt || item.title || '';
-          if (i < 6) {
-            img.src = item.image;
-            img.loading = 'eager';
+
+          if (item.video) {
+            // ── Animated piece: silent autoplay loop ──
+            div.dataset.video = item.video;
+            const vid = document.createElement('video');
+            vid.muted = true;
+            vid.loop = true;
+            vid.autoplay = true;
+            vid.playsInline = true;
+            vid.setAttribute('muted', '');
+            vid.setAttribute('playsinline', '');
+            vid.setAttribute('aria-label', item.alt || item.title || '');
+            if (item.image) vid.poster = item.image;
+            if (i < 6) {
+              vid.preload = 'auto';
+              vid.src = item.video;
+            } else {
+              vid.preload = 'none';
+              vid.dataset.src = item.video;
+              vid.className = 'lazy-img';
+            }
+            div.appendChild(vid);
+            const motion = document.createElement('div');
+            motion.className = 'portfolio-item-motion';
+            motion.innerHTML = '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M1 0.5 L9 5 L1 9.5 Z" fill="white"/></svg>';
+            div.appendChild(motion);
           } else {
-            img.dataset.src = item.image;
-            img.className = 'lazy-img';
+            // ── Still image ──
+            const img = document.createElement('img');
+            img.alt = item.alt || item.title || '';
+            if (i < 6) {
+              img.src = item.image;
+              img.loading = 'eager';
+            } else {
+              img.dataset.src = item.image;
+              img.className = 'lazy-img';
+            }
+            div.appendChild(img);
           }
+
           const overlay = document.createElement('div');
           overlay.className = 'portfolio-item-overlay';
           overlay.innerHTML = `<span class="portfolio-item-label">${categoryLabels[item.category] || item.category}</span>`;
-          div.appendChild(img);
           div.appendChild(overlay);
           grid.appendChild(div);
         });
@@ -962,15 +1010,35 @@
 
     // Lightbox
     function openLightbox(el) {
-      const img = el.querySelector('img');
-      document.getElementById('lightbox-img').src = img.src;
-      document.getElementById('lightbox-img').alt = img.alt;
-      document.getElementById('lightbox').classList.add('open');
+      const box   = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbVid = document.getElementById('lightbox-video');
+      const videoSrc = el.dataset.video;
+
+      if (videoSrc) {
+        lbVid.src = videoSrc;
+        lbVid.play().catch(() => {});
+        box.classList.add('is-video');
+      } else {
+        const img = el.querySelector('img');
+        lbImg.src = img.src || img.dataset.src || '';
+        lbImg.alt = img.alt;
+        lbVid.pause();
+        lbVid.removeAttribute('src');
+        box.classList.remove('is-video');
+      }
+      box.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
     function closeLightbox(e) {
-      if (!e || e.target !== document.getElementById('lightbox-img')) {
-        document.getElementById('lightbox').classList.remove('open');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbVid = document.getElementById('lightbox-video');
+      if (!e || (e.target !== lbImg && e.target !== lbVid)) {
+        const box = document.getElementById('lightbox');
+        box.classList.remove('open');
+        box.classList.remove('is-video');
+        lbVid.pause();
+        lbVid.removeAttribute('src');
         document.body.style.overflow = '';
       }
     }
@@ -1127,12 +1195,16 @@
 
     // ── Reliable lazy loading via IntersectionObserver (fixes Safari CSS columns) ──
     function initLazyLoad() {
-      const lazyImgs = document.querySelectorAll('img.lazy-img');
+      const lazyImgs = document.querySelectorAll('img.lazy-img, video.lazy-img');
       if (!lazyImgs.length) return;
-      const load = img => {
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-        img.classList.remove('lazy-img');
+      const load = el => {
+        el.src = el.dataset.src;
+        el.removeAttribute('data-src');
+        el.classList.remove('lazy-img');
+        if (el.tagName === 'VIDEO') {
+          el.load();
+          el.play().catch(() => {});
+        }
       };
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries, obs) => {

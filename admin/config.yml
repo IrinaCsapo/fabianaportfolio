@@ -226,10 +226,17 @@ collections:
               - label: "Image"
                 name: image
                 widget: image
-                hint: "Upload the illustration for this portfolio piece"
+                required: false
+                hint: "Upload the illustration for this piece. If you also add a video below, this image is used as the still preview frame while the video loads."
+
+              - label: "Video / Animation (optional)"
+                name: video
+                widget: file
+                required: false
+                hint: "Upload a short looping animation — MP4 or WebM works best (GIFs work too but are much larger). It will play silently on loop. Keep under 10MB so the page stays fast."
 
               - label: "Alt Text"
                 name: alt
                 widget: string
                 required: false
-                hint: "Brief description of the image (good for accessibility)"
+                hint: "Brief description of the artwork (good for accessibility)"
